@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Three</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img class = "img-responsive" style="width:100%;" src="static/images/3_india_map.png" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                
+            </div>
+            <div class="col">
+                <canvas id="bar-chart-horizontal"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <script>
+
+        
+        new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["Mumbai", "Pune", "Delhi", "Hydrabad", "Bangalore", "Kolkata"],
+      datasets: [
+        {
+          label: "A",
+          backgroundColor: ["#FFC300","#FFC300","#FFC300","#FFC300","#FFC300","#FFC300",],
+          data: [2478,1267,734,684,433, 255]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Some Title'
+      }
+    }
+});
+    </script>
+</body>
+
+</html>

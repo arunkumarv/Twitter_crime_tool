@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <title>Eight</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Demographic Performance</h2>
+                <canvas id="pie-chart"></canvas>
+            </div>
+            <div class="col">
+                <h2>For twitter handle</h2>
+                <table class="table">
+                    <tr>
+                        <td>Si No</td>
+                        <td>State Namae</td>
+                        <td>Percentage Followers</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem Ipsum</td>
+                        <td>33 %</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem Ipsum</td>
+                        <td>33 %</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem Ipsum</td>
+                        <td>33 %</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem Ipsum</td>
+                        <td>33 %</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Lorem Ipsum</td>
+                        <td>33 %</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Average followers lost or gained</h2>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div class="card text-center"  style="width: 8rem;">
+                            <div class="card-body">
+                                <h5>-5%</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center"  style="width: 8rem;">
+                            <div class="card-body">
+                                <h5>+55</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <canvas id="sb-chart" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <script>
+        new Chart(document.getElementById("pie-chart"), {
+            type: 'pie',
+            data: {
+                labels: ["Kerala", "AsAndhra Pradeshia", "Tamil Nadu", "Karnataka"],
+                datasets: [{
+                    label: "Population (millions)",
+                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9",/* "#c45850" */],
+                    data: [2478, 5267, 734, 784]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Predicted world population (millions) in 2050'
+                }
+            }
+        });
+
+        new Chart(document.getElementById("sb-chart"), {
+            type: 'bar',
+            data: {
+                labels: ['July', 'August', 'September', 'October'], // responsible for how many bars are gonna show on the chart
+                // create 12 datasets, since we have 12 items
+                // data[0] = labels[0] (data for first bar - 'Standing costs') | data[1] = labels[1] (data for second bar - 'Running costs')
+                // put 0, if there is no data for the particular bar
+                datasets: [{
+                    label: 'Lost',
+                    data: [5, 8, 4, 6],
+                    backgroundColor: '#4472C4'
+                }, {
+                    label: 'Gained',
+                    data: [5, 2, 5, 6],
+                    backgroundColor: '#ED7D31'
+                }, {
+                    label: 'Grey',
+                    data: [5, 8, 4, 6],
+                    backgroundColor: '#cccccc'
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'right' // place legend on the right side of chart
+                },
+                scales: {
+                    xAxes: [{
+                        stacked: true // this should be set to make the bars stacked
+                    }],
+                    yAxes: [{
+                        stacked: true // this also..
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

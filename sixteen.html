@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/js/bootstrap.min.css">
+    <title>SIXTEEN</title>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="bar-chart-horizontal" width="800" height="450"></canvas>
+    </div>
+    <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/Chart.min.js"></script>
+    <script>
+        new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: ["categories","drug","pdate","organisation","drug seizure","drug consumption","drug transaction","exploitation location","drug location","tafficking location","arrest location","author","author geo location","continent","country","city","location"],
+      datasets: [
+        {
+          label: "A",
+          backgroundColor: ["#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc","#cccccc",],
+          data: [45, 43, 43, 45, 56, 57, 43, 21, 23, 64, 36, 22, 34, 51, 54, 34, 32]
+        },
+        {
+          label: "B",
+          backgroundColor: ["#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", "#555555", ],
+          data: [93, 51, 90, 55, 67, 87, 78, 65, 67, 67, 87, 90, 98, 67, 89, 87, 98]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Content categorisation and named entity  extraction evaluation results'
+      }
+    }
+});
+    </script>
+</body>
+
+</html>
